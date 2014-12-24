@@ -8,7 +8,7 @@ type CurrentUser struct {
 	Client *api.Client
 }
 
-func NewCurrentUser(c *api.Client) api.Resource {
+func NewCurrentUser(c *api.Client) *CurrentUser {
 	return &CurrentUser{
 		Client: c,
 	}
