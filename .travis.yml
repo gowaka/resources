@@ -3,6 +3,7 @@ install:
   - go get github.com/httgo/mock
   - go get github.com/gowaka/api
   - go get gopkg.in/nowk/assert.v2
+  - go get gopkg.in/nowk/dmx.v2
 go:
   - "1.0"
   - "1.1"
