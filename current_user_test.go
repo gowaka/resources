@@ -2,18 +2,12 @@ package resources
 
 import (
 	"github.com/gowaka/api"
-	"github.com/httgo/mock"
 	"gopkg.in/nowk/assert.v2"
-	"net/http/httptest"
 	"testing"
 )
 
 func TestCurrentUser(t *testing.T) {
-	mo := &mock.Mock{
-		Testing: t,
-		Ts:      httptest.NewUnstartedServer(mux),
-	}
-	mo.Start()
+	mo := mwaka(t)
 	defer mo.Done()
 
 	waka, err := api.NewClient("...", func(c *api.Client) {
