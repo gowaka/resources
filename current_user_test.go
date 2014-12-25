@@ -16,7 +16,7 @@ func TestCurrentUser(t *testing.T) {
 	mo.Start()
 	defer mo.Done()
 
-	c, err := api.NewClient("...", func(c *api.Client) {
+	waka, err := api.NewClient("...", func(c *api.Client) {
 		c.Client = mo
 	})
 	if err != nil {
@@ -24,8 +24,8 @@ func TestCurrentUser(t *testing.T) {
 	}
 
 	var m MyStruct
-	user := NewCurrentUser(c)
-	if err = user.Get(&m); err != nil {
+	err = waka.Get(CurrentUser{}, &m)
+	if err != nil {
 		t.Fatal(err)
 	}
 	assert.Equal(t, "bar", m.Foo)
