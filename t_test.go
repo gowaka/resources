@@ -21,6 +21,7 @@ func h(body string) http.Handler {
 func init() {
 	m := dmx.New()
 	m.Get("/api/v1/users/current", h(`{"foo":"bar"}`))
+	m.Get("/api/v1/summary/daily", h(`{"foo":"bar"}`))
 	mux = m.Handler(dmx.NotFound(m))
 }
 
