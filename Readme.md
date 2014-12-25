@@ -7,7 +7,7 @@ WakaTime API resources
 
 ## Example
 
-Setup an API client with your `api_key`.
+Setup an [API client](https://github.com/gowaka/api) with your `api_key`.
 
     waka, err := api.NewClient("12345")
     if err != nil {
